@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>3D Printer Dashboard</title>
+    <style>
+        .temp-info {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            background-color: #222;
+            color: white;
+            padding: 10px;
+            font-family: Arial, sans-serif;
+            margin: 10px;
+            border-radius: 5px;
+        }
+
+        .temp-info span {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div id="app">
+        <div class="temp-info">
+            <span>🌡️ Extruder: <span id="extruder-temp">0°</span></span>
+            <span>🔥 Heater Bed: <span id="bed-temp">0°</span></span>
+            <span>🖥️ Pi: <span id="pi-temp">0°</span></span>
+        </div>
+        <header>
+            <h1>3D Printer | Home</h1>
+            <div class="header-time">
+                <span id="current-time">00:00</span>
+            </div>
+        </header>
+        <main>
+            <div class="dashboard">
+                <div class="status">
+                    <h2>Current Status: <span id="printer-status">Idle</span></h2>
+                </div>
+                <div class="temperatures">
+                    <h3>Extruder Temperature: <span id="extruder-temp-display">0°</span></h3>
+                    <h3>Heater Bed Temperature: <span id="bed-temp-display">0°</span></h3>
+                </div>
+                <div class="progress">
+                    <h3>Print Job Progress: <span id="print-progress">0%</span></h3>
+                </div>
+            </div>
+            <div class="right-panel">
+                <div class="temperature-graph">
+                    <h3>Temperature Changes Over Time</h3>
+                    <canvas id="temperature-chart"></canvas>
+                </div>
+                <div class="buttons">
+                    <button class="button orange">Homing</button>
+                    <button class="button pink">Temperature</button>
+                    <button class="button cyan">Actions</button>
+                    <button class="button green">Configuration</button>
+                    <button class="button yellow">Print</button>
+                </div>
+            </div>
+        </main>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,131 @@
+/* General styling */
+body {
+    background-color: black;
+    color: white;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+main {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: 20px;
+}
+
+/* Dashboard styling */
+.dashboard {
+    flex: 1;
+    min-width: 300px;
+    padding: 20px;
+    color: white;
+}
+
+.status h2, .temperatures h3, .progress h3 {
+    margin: 10px 0;
+}
+
+/* Right panel styling */
+.right-panel {
+    flex: 1;
+    min-width: 300px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
+/* Temperature graph */
+.temperature-graph {
+    width: 60%; /* Center the graph with reduced width */
+    margin: 0 auto 20px auto; /* Center alignment */
+}
+
+canvas {
+    width: 100%;
+    height: 200px; /* Adjust graph size */
+    background-color: #222;
+    border: 1px solid gray;
+}
+
+/* Buttons styling */
+.buttons {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* Two buttons per row */
+    gap: 20px;
+    width: 100%;
+}
+
+.button {
+    padding: 20px 30px; /* Larger buttons */
+    border: none;
+    border-radius: 10px;
+    font-size: 18px; /* Larger font size */
+    color: rgb(35, 33, 33);
+    cursor: pointer;
+    text-align: center;
+}
+
+.button.orange {
+    background-color: orange;
+}
+
+.button.pink {
+    background-color: magenta;
+}
+
+.button.cyan {
+    background-color: cyan;
+}
+
+.button.green {
+    background-color: limegreen;
+}
+
+.button.yellow {
+    background-color: yellow;
+}
+
+/* Temperature boxes styling */
+.temperature-boxes {
+    display: flex;
+    flex-direction: column; /* Stack boxes vertically */
+    gap: 10px; /* Add spacing between boxes */
+    margin: 20px 0; /* Add margin around the section */
+}
+
+.temperature-box {
+    background-color: #000000; /* Dark background for the boxes */
+    border: 1px solid rgb(0, 0, 0); /* Add a border */
+    border-radius: 8px; /* Rounded corners */
+    padding: 10px 15px; /* Add padding inside the boxes */
+    color: white; /* Text color */
+    font-size: 16px; /* Font size for the text */
+    display: flex;
+    justify-content: space-between; /* Space out the text */
+    align-items: center; /* Center align the text vertically */
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    main {
+        flex-direction: column;
+    }
+
+    .right-panel {
+        align-items: center;
+    }
+
+    .temperature-graph {
+        width: 90%; /* Adjust graph width for smaller screens */
+    }
+
+    .buttons {
+        grid-template-columns: 1fr; /* One button per row on smaller screens */
+    }
+
+    .button {
+        width: 100%;
+    }
+}
